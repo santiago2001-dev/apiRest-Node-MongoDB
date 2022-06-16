@@ -32,13 +32,7 @@ const usuariosPost = async(req, res = response) => {
     //con find One podemos compravar si existe la seleccion dentro de 
     // el shema de mongo
     //en este caso comprobamos si ya existe este correo en la db
-    const existeEmail =  await Usuario.findOne({Correo});
-    if (existeEmail){
-        return res.status(400).json({
-            msg : 'El  correo ya está registrado'
-        })
-
-    }
+  
 
     //encriptamos el pass
     const salt = bcryptjs.genSaltSync();

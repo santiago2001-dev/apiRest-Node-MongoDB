@@ -44,4 +44,10 @@ const usuarioShema= Schema({
 
 });
 
+
+//SACAR PARAMETROS CUANDO SE ENVÍA UN JSON DE LA CONSULTA
+usuarioShema.methods.toJSON =  function(){
+    const {__v,Pasword, ...usuario} =  this.toObject();
+    return usuario;
+}
 module.exports = model('Usuario',usuarioShema);

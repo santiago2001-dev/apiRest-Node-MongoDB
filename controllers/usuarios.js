@@ -16,6 +16,8 @@ const usuariosGet = (req = request, res = response) => {
     });
 }
 
+
+
 const usuariosPost = async(req, res = response) => {
   
   
